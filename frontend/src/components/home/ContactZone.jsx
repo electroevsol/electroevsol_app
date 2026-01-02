@@ -59,23 +59,23 @@ const ContactZone = () => {
   };
 
   return (
-    <section className="px-4 py-20 bg-slate-50" id="contact">
-      <div className="max-w-7xl mx-auto bg-brand-dark rounded-section p-8 md:p-20 text-white relative overflow-hidden shadow-2xl">
+    <section className="px-4 py-12 md:py-20 bg-slate-50" id="contact">
+      <div className="max-w-7xl mx-auto bg-brand-dark rounded-section p-6 md:p-20 text-white relative overflow-hidden shadow-2xl">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start relative z-10">
           <div className="space-y-10">
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none">
                 Let's <span className="text-brand-primary">Connect</span>
               </h2>
-              <p className="text-slate-400 text-lg max-w-md leading-relaxed font-medium">
+              <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed font-medium">
                 Ready to transition to clean energy? Reach out for a
                 consultation or professional site audit.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <ContactDetail
                 icon={PhoneIcon}
                 text="+91 7800686299"
@@ -95,14 +95,14 @@ const ContactZone = () => {
 
             <Button
               onClick={handleWhatsApp}
-              className="bg-[#25D366] hover:bg-[#128C7E] shadow-green-500/20 py-4 px-10 gap-3"
+              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] shadow-green-500/20 py-4 px-10 gap-3 justify-center"
             >
               <ChatBubbleLeftEllipsisIcon className="w-6 h-6" />
               WhatsApp Inquiry
             </Button>
           </div>
 
-          <div className="bg-[#434D56] p-8 md:p-12 rounded-card shadow-inner border border-white/5">
+          <div className="bg-[#434D56] p-6 md:p-12 rounded-card shadow-inner border border-white/5">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5">
               <input
                 type="text"
@@ -110,7 +110,7 @@ const ContactZone = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="Full Name"
-                className="contact-input"
+                className="contact-input w-full"
                 required
               />
 
@@ -120,7 +120,7 @@ const ContactZone = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address"
-                className="contact-input"
+                className="contact-input w-full"
                 required
               />
 
@@ -130,7 +130,7 @@ const ContactZone = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
-                className="contact-input"
+                className="contact-input w-full"
                 required
               />
 
@@ -139,7 +139,7 @@ const ContactZone = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="contact-input text-slate-400 appearance-none cursor-pointer"
+                  className="contact-input w-full text-slate-400 appearance-none cursor-pointer"
                 >
                   <option className="text-brand-dark font-bold">
                     Solar Energy System
@@ -178,7 +178,7 @@ const ContactZone = () => {
                 value={formData.details}
                 onChange={handleChange}
                 placeholder="Tell us about your project..."
-                className="contact-input h-32 resize-none"
+                className="contact-input w-full h-32 resize-none"
               />
 
               <Button
@@ -199,15 +199,15 @@ const ContactZone = () => {
 };
 
 const ContactDetail = ({ icon: Icon, text, sub }) => (
-  <div className="flex items-center gap-6 group">
-    <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-      <Icon className="w-7 h-7" />
+  <div className="flex items-start gap-5 group">
+    <div className="w-12 h-12 md:w-14 md:h-14 bg-white/5 rounded-2xl flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all duration-300 shrink-0 mt-1">
+      <Icon className="w-6 h-6 md:w-7 md:h-7" />
     </div>
     <div>
-      <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">
+      <p className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">
         {sub}
       </p>
-      <p className="text-xl font-bold">{text}</p>
+      <p className="text-lg md:text-xl font-bold leading-tight">{text}</p>
     </div>
   </div>
 );

@@ -1,7 +1,6 @@
 import ContactHero from "../components/contact/ContactHero";
 import ContactForm from "../components/contact/ContactForm";
 import ContactInfoCards from "../components/contact/ContactInfoCards";
-import MapSection from "../components/contact/MapSection";
 
 const Contact = () => {
   return (
@@ -19,8 +18,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* <MapSection /> */}
     </div>
   );
 };

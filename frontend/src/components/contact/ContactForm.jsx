@@ -47,21 +47,24 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white p-10 md:p-14 rounded-header shadow-2xl border border-slate-50 relative overflow-hidden">
+    // Fixed: Reduced padding from p-10 to p-6 for mobile devices
+    <div className="bg-white p-6 md:p-14 rounded-3xl md:rounded-header shadow-2xl border border-slate-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full -mr-16 -mt-16 blur-3xl" />
 
-      <div className="mb-10">
-        <h2 className="text-4xl font-black text-brand-dark tracking-tighter mb-2">
+      {/* Fixed: Reduced margin for mobile */}
+      <div className="mb-8 md:mb-10">
+        {/* Fixed: Responsive text size (3xl on mobile, 4xl on desktop) */}
+        <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter mb-2">
           Request a Quote
         </h2>
-        <p className="text-slate-500 font-medium">
+        <p className="text-slate-500 font-medium text-sm md:text-base">
           Professional site audit and renewable energy feasibility study.
         </p>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6"
       >
         <FormInput
           type="text"
@@ -134,8 +137,9 @@ const ContactForm = () => {
           <label className="text-xs font-black text-slate-400 uppercase tracking-widest px-1">
             Project Details
           </label>
+          {/* Fixed: Replaced non-standard 'min-h-37.5' with standard 'h-40' */}
           <textarea
-            className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 min-h-37.5 outline-none focus:border-brand-primary transition-all font-medium"
+            className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 h-40 outline-none focus:border-brand-primary transition-all font-medium resize-none"
             name="details"
             value={formData.details}
             onChange={handleChange}
@@ -143,11 +147,11 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className="md:col-span-2 pt-4">
+        <div className="md:col-span-2 pt-2 md:pt-4">
           <Button
             type="submit"
             disabled={loading}
-            className={`w-full py-5 text-lg flex items-center justify-center gap-3 ${
+            className={`w-full py-4 md:py-5 text-base md:text-lg font-bold shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 md:gap-3 ${
               loading ? "opacity-70 cursor-not-allowed" : ""
             }`}
           >
@@ -156,7 +160,7 @@ const ContactForm = () => {
             ) : (
               <>
                 <PaperAirplaneIcon className="w-5 h-5 -rotate-45" />
-                Send Official Inquiry
+                <span>Send Official Inquiry</span>
               </>
             )}
           </Button>
