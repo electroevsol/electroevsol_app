@@ -85,7 +85,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="w-full py-4 text-center text-lg"
             >
-              Get Started
+              Get a Quote
             </Button>
           </div>
         )}

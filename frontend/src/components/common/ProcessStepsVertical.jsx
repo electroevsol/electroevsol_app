@@ -5,7 +5,7 @@ import {
   PencilSquareIcon,
   WrenchScrewdriverIcon,
   BoltIcon,
-  CheckBadgeIcon, 
+  CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
 
 const steps = [
@@ -27,14 +27,12 @@ const steps = [
     icon: WrenchScrewdriverIcon,
     color: "bg-yellow-500",
   },
-
   {
     title: "Net Metering",
     desc: "Grid synchronization and startup to begin your journey of #IncreasingO2.",
     icon: BoltIcon,
     color: "bg-emerald-600",
   },
-
   {
     title: "Commissionary",
     desc: "Final safety inspections and performance testing to ensure peak system efficiency.",
@@ -72,15 +70,14 @@ const ProcessStepsVertical = () => {
       </div>
 
       <div className="relative">
-        {/* Background Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-100 -ml-[0.5px] rounded-full" />
+        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-slate-100 -ml-[0.5px] rounded-full" />
 
         <motion.div
           style={{ scaleY }}
-          className="absolute left-1/2 top-0 bottom-0 w-px bg-brand-primary -ml-[0.5px] origin-top rounded-full z-10"
+          className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-brand-primary -ml-[0.5px] origin-top rounded-full z-10"
         />
 
-        <div className="space-y-32">
+        <div className="space-y-12 md:space-y-32">
           {steps.map((step, index) => (
             <StepItem key={index} step={step} index={index} />
           ))}
@@ -91,26 +88,28 @@ const ProcessStepsVertical = () => {
 };
 
 const StepItem = ({ step, index }) => {
+  const isEven = index % 2 === 0;
+
   return (
     <div
-      className={`relative flex items-center justify-between w-full flex-col md:flex-row ${
-        index % 2 !== 0 ? "md:flex-row-reverse" : ""
+      className={`relative flex items-center justify-between w-full md:flex-row ${
+        !isEven ? "md:flex-row-reverse" : ""
       }`}
     >
-      {/* Content Card */}
-      <div className="w-full md:w-[45%] text-center md:text-left mt-20 md:mt-0">
+      
+      <div className="w-full pl-20 md:pl-0 md:w-[45%] text-left">
         <motion.div
-          initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: index * 0.1 }} 
           className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-50 hover:shadow-2xl transition-all group overflow-hidden"
         >
-          <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
+          <div className="flex items-center justify-start gap-4 mb-4">
             <span className="text-3xl md:text-4xl font-black text-slate-100 group-hover:text-brand-primary/20 transition-colors shrink-0">
               0{index + 1}
             </span>
-            <h3 className="text-xl md:text-2xl font-black text-brand-dark tracking-tighter uppercase leading-tight wrap-break-word hyphens-auto">
+            <h3 className="text-xl md:text-2xl font-black text-brand-dark tracking-tighter uppercase leading-tight wrap-break-word">
               {step.title}
             </h3>
           </div>
@@ -120,8 +119,7 @@ const StepItem = ({ step, index }) => {
         </motion.div>
       </div>
 
-      {/* Center Icon */}
-      <div className="absolute left-1/2 -ml-8 top-0 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center z-20">
+      <div className="absolute left-8 md:left-1/2 -ml-8 top-0 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center z-20">
         <div
           className={`${step.color} w-16 h-16 rounded-2xl shadow-lg shadow-current/30 flex items-center justify-center text-white relative`}
         >
@@ -132,7 +130,6 @@ const StepItem = ({ step, index }) => {
         </div>
       </div>
 
-      {/* Spacer */}
       <div className="hidden md:block md:w-[45%]" />
     </div>
   );
