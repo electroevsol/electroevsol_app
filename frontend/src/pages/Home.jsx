@@ -37,7 +37,7 @@ const Home = () => {
               Expertise
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter  uppercase">
+          <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter uppercase">
             Services <span className="text-brand-primary">Portfolio</span>
           </h2>
         </div>

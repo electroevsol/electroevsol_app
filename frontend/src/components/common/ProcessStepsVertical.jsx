@@ -58,13 +58,13 @@ const ProcessStepsVertical = () => {
   return (
     <section
       ref={containerRef}
-      className="py-24 max-w-6xl mx-auto px-6 relative"
+      className="py-16 md:py-24 max-w-6xl mx-auto px-4 md:px-6 relative overflow-hidden"
     >
-      <div className="text-center mb-24">
+      <div className="text-center mb-16 md:mb-24">
         <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">
           Renewable Excellence
         </span>
-        <h2 className="text-5xl md:text-6xl font-black text-brand-dark tracking-tighter uppercase leading-none">
+        <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter uppercase leading-none">
           Our <span className="text-brand-primary">Process</span>
         </h2>
       </div>
@@ -96,23 +96,24 @@ const StepItem = ({ step, index }) => {
         !isEven ? "md:flex-row-reverse" : ""
       }`}
     >
-      
       <div className="w-full pl-20 md:pl-0 md:w-[45%] text-left">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: index * 0.1 }} 
-          className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-50 hover:shadow-2xl transition-all group overflow-hidden"
+          transition={{ duration: 0.8, delay: index * 0.1 }}
+          className="bg-white p-5 md:p-10 rounded-3xl shadow-xl border border-slate-50 hover:shadow-2xl transition-all group overflow-hidden"
         >
-          <div className="flex items-center justify-start gap-4 mb-4">
-            <span className="text-3xl md:text-4xl font-black text-slate-100 group-hover:text-brand-primary/20 transition-colors shrink-0">
+          <div className="flex items-center justify-start gap-3 md:gap-4 mb-3 md:mb-4">
+            <span className="text-2xl md:text-4xl font-black text-slate-100 group-hover:text-brand-primary/20 transition-colors shrink-0">
               0{index + 1}
             </span>
-            <h3 className="text-xl md:text-2xl font-black text-brand-dark tracking-tighter uppercase leading-tight wrap-break-word">
+
+            <h3 className="text-lg md:text-2xl font-black text-brand-dark tracking-tighter uppercase leading-tight wrap-break-word hyphens-auto">
               {step.title}
             </h3>
           </div>
+
           <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-base">
             {step.desc}
           </p>
