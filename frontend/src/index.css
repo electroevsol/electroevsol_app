@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #009f6b;
+  --color-brand-dark: #333c44;
+  --color-brand-forest: #004d34;
+  --color-brand-soft: #e7f5ee;
+
+  --radius-header: 3rem;
+  --radius-section: 3.5rem;
+  --radius-card: 2.5rem;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer components {
+  .contact-input {
+    @apply w-full bg-slate-900/30 border border-white/10 rounded-2xl p-4 outline-none focus:border-brand-primary focus:bg-slate-900/50 transition-all text-white placeholder:text-slate-500 font-medium;
+  }
+
+  .calc-input {
+    @apply w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-3.5 text-base font-bold text-brand-dark outline-none focus:border-brand-primary focus:bg-white transition-all placeholder:text-slate-300 placeholder:font-medium;
+  }
+
+  .calc-input-dark {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl p-3.5 text-base font-bold text-white outline-none focus:border-brand-primary focus:bg-white/10 transition-all placeholder:text-white/20 placeholder:font-medium;
+  }
+}
