@@ -34,7 +34,7 @@ const steps = [
     color: "bg-emerald-600",
   },
   {
-    title: "Commissionary",
+    title: "Commissioning",
     desc: "Final safety inspections and performance testing to ensure peak system efficiency.",
     icon: CheckBadgeIcon,
     color: "bg-orange-500",
